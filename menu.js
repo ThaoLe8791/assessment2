@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+pizza = {
+    name: 'Supreme',
+    price: 30,
+    category: 'entree',
+    popularity: 8,
+    rating: 4,
+    tag: ['gluten-free', 'vegetarian']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tag[1])
 
 /*
     Third, destructure the price off of the
@@ -63,8 +70,8 @@
 */
 
 //CODE HERE
-
-
+const {price} = pizza;
+console.log(price)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +80,8 @@
 */
 
 //CODE HERE
-
+const {category} = pizza;
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /*
@@ -89,7 +97,35 @@
 
 //CODE HERE
 
+foodArr = [
+    {name: 'Pho',
+    price: 20,
+    category: 'entree',
+    popularity: 10,
+    rating: 5,
+    tag: ['gluten-free', 'noodles']},
 
+    {name: 'Banh Mi',
+    price: 100,
+    category: 'appetizer',
+    popularity: 8,
+    rating: 5,
+    tag: ['cold', 'sandwich']}, 
+
+    {name: 'Lettuce wrap',
+    price: 10,
+    category: 'appetizer',
+    popularity: 7,
+    rating: 3,
+    tag: ['salad', 'quick']},
+
+    {name: 'Cheesecake',
+    price: 5,
+    category: 'dessert',
+    popularity: 7,
+    rating: 5,
+    tag: ['sweet', 'cheese']}
+]
 
 //////////////////PROBLEM 4////////////////////
 /*
@@ -109,7 +145,9 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+
+const filteredFood = foodArr.filter((food) => food.tag.includes('sweet'));
+console.log(filteredFood)
 
 
 
@@ -148,6 +186,10 @@
 */
 
 //CODE HERE
+const filterByProperty = (property,number) =>{
+    const filteredFood = foodArr.filter((food) => food[property] > number);
+    return filteredFood;
+}
 
 
 /*
@@ -158,3 +200,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('popularity',8));

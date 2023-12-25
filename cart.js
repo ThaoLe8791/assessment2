@@ -35,7 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((total,current) => total + current.price,0);
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +55,12 @@ const cart = [
 */
 
 //CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    cartTotal = cartTotal * (1+tax) - couponValue;
+    return cartTotal;
+}
 
+console.log(calcFinalPrice(100,20,0.06))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -78,7 +84,9 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+Basic info about customer like 'name', 'email', and 'phone'. These 3 properties should be string type.
+Property 'orderedItems' should be an array of objects, where each object is an item that customer ordered in the past. property of objects
+can be like 'itemName' (string), 'quantity' (number), and 'price' (number).
 
 */
 
@@ -87,4 +95,12 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+    name: "An Mi Nguyen",
+    email: "AnN@coffeeshop.com",
+    phone: "123-456-7980",
+    orderedItems: [
+        { itemName: "Pizza", quantity: 2, price: 15.99 },
+        { itemName: "Salad", quantity: 1, price: 8.49 },
+    ]
+};
